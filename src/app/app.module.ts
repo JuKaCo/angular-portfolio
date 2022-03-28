@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
@@ -51,8 +50,8 @@ export class AppModule { }
 
 export function translateFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(
-    httpClient, 
+    httpClient/*, 
     '../desarrollador/assets/i18n/', // or whatever path you're using
-    '.json'
+    '.json'*/
   );
 }

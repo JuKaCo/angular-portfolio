@@ -9,7 +9,7 @@ import Typed from 'typed.js';
 export class HomeComponent implements OnInit {
 
   constructor() { }
-
+  
   ngOnInit(): void {
     var options = {
       strings: ['Magento','PHP', 'Angular','Linux Servers','Git','Api Rest','Scrum','PrimeNg','Material','SQL','PMBOK'],
