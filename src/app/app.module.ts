@@ -50,8 +50,8 @@ export class AppModule { }
 
 export function translateFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(
-    httpClient/*, 
-    '../desarrollador/assets/i18n/', // or whatever path you're using
+    /*httpClient,*/
+    '/assets/i18n/', // or whatever path you're using
     '.json'*/
   );
 }
