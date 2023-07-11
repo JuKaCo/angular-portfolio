@@ -1,5 +1,5 @@
 {
-    "I'm a Developer": "I have knowledge in",
+    "I'm a Developer": "Skillful in: ",
     "Full-Stack": "Full-Stack",
     "WEB": "WEB",
     "Mobile": "Mobil",
@@ -62,5 +62,15 @@
     "hansa9": "Optimization of test and production servers for magento implementations.",
     "recom1": "Bro, we need your help and expertise in the development of a system, I know that you will be of great help in this project, work with us please.",
     "recom2": "Thank you for all the support provided in the projects for the health area, I hope we can work together again in the future.",
-    "recom3": "It was really a great pleasure working with you. Thank you for all the effort put into the project, for the hours of wakefulness and your patience."
+    "recom3": "It was really a great pleasure working with you. Thank you for all the effort put into the project, for the hours of wakefulness and your patience.",
+    "latinamericanmall1": "Development of new functionalities in web stores based on OsCommerce.",
+    "latinamericanmall2": "Database administration and creation of new endpoints.",
+    "latinamericanmall3": "Updating of marketing offers for different online stores.",
+    "latinamericanmall4": "Implementation of online payment gateways. (Paypal, Stripe)",
+    "latinamericanmall5": "Development of mobile application for suppliers. (Android)",
+    "latinamericanmall6": "Optimization of filling in delivery addresses for an online store in Brazil.",
+    "latinamericanmall7": "Migration of hosting, web pages and databases.",
+    "latinamericanmall8": "Preparation of monthly sales reports for the accounting area.",
+    "years": "years",
+    "months": "months"
   }

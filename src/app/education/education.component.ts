@@ -13,6 +13,7 @@ export class EducationComponent implements OnInit {
   freelanceIsShown : boolean = false;
   alternanceIsShown:boolean = false;
   freelanceScotfyIsShown:boolean = false;
+  latinAmericanIsShown:boolean = false;
   planeIcon: any ;
   gameIcon:any;
   volleyBallIcon:any;
@@ -29,10 +30,13 @@ export class EducationComponent implements OnInit {
     else if(id=="freelanceScotfy_detail"){
       this.freelanceScotfyIsShown = !this.freelanceScotfyIsShown;
     }
-   
+    else if(id=="latinamerican_detail"){
+      this.latinAmericanIsShown = !this.latinAmericanIsShown;
+    }
+
   }
- 
-  constructor() { 
+
+  constructor() {
   }
 
   ngOnInit(): void {
