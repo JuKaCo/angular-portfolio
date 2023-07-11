@@ -52,6 +52,6 @@ export function translateFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(
     /*httpClient,*/
     '/assets/i18n/', // or whatever path you're using
-    '.json'*/
+    '.json'
   );
 }
