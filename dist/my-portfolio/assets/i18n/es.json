@@ -1,6 +1,8 @@
 {
-    "I'm a Developer": "Habilidades en: ",
+    "I'm a Developer": "Competente en: ",
     "Full-Stack": "Full-Stack",
+    "Backend": "Backend",
+    "Frontend": "Frontend",
     "WEB": "WEB",
     "Mobile": "Móvil",
     "Welcome": "Bienvenido",
@@ -35,11 +37,16 @@
     "Spanish": "Español",
     "English": "Inglés",
     "Native": "Nativo",
-    "Advanced intermediate": "Intermedio avanzado",
+    "Advanced intermediate": "Intermedio superior",
     "Data of interest": "Datos de interés",
     "Sport": "Deporte",
     "Video game": "Videojuegos",
     "View certificate": "Ver certificado",
+    "motioncx1": "Desarrollo y adición de nuevos endpoints en microservicios usando .NET.",
+    "motioncx2": "Desarrollo y adición de nuevas funcionalidades en el cliente web usando Angular.",
+    "motioncx3": "Desarrollo y adición de nuevas funcionalidades en el cliente de escritorio usando React.",
+    "motioncx4": "Versionamiento de código y manejo de diferentes entornos a través de Entrega Continua (CD).",
+    "motioncx5": "Documentación y gestion de nuevas funcionalidades usando JIRA y GitHub.",
     "lafuente1": "Desarrollo de landingpages integrados a sugarCRM usando angular y servicios rest.",
     "lafuente2": "Desarrollo de servicios REST personalizados sobre sugarCRM usando procedimientos MySQL.",
     "lafuente3": "Personalización de módulos dentro de SugarCRM usando angular y servicios REST.",
@@ -72,5 +79,11 @@
     "latinamericanmall7": "Migración de hosting, páginas web y bases de datos.",
     "latinamericanmall8": "Elaboración de reportes mensuales de ventas para el área de contabilidad.",
     "years": "años",
-    "months": "meses"
-  }
+    "months": "meses",
+    "Project Details": "Detalles del proyecto",
+    "E-commerce Website": "Sitio Web de Comercio Electrónico",
+    "Online Resume": "Currículum Vitae en línea",
+    "Code Source": "Código Fuente",
+    "Portfolio details": "Proyecto de currículum en línea para incrementar mi visibilidad como desarrollador frontend. Basado en Angular con HTML y CSS, cuenta con tecnologia i18n para el despliegue en dos idiomas.",
+    "Ecommerce details": "Proyecto de comercio electrónico para HANSA una importante importadora en Bolivia,se migraron datos de productos, categorias y precios desde un proyecto previo. Para este proyecto nos basamos en Magento 2 con cobertura B2C y B2B. Además se integró el comercio con CRM y ERP a través de servicios REST."
+}

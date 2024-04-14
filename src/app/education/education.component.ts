@@ -13,6 +13,7 @@ export class EducationComponent implements OnInit {
   freelanceIsShown : boolean = false;
   alternanceIsShown:boolean = false;
   freelanceScotfyIsShown:boolean = false;
+  freelanceMotionIsShown:boolean = false;
   latinAmericanIsShown:boolean = false;
   planeIcon: any ;
   gameIcon:any;
@@ -29,6 +30,9 @@ export class EducationComponent implements OnInit {
     }
     else if(id=="freelanceScotfy_detail"){
       this.freelanceScotfyIsShown = !this.freelanceScotfyIsShown;
+    }
+    else if(id=="freelanceMotion_detail"){
+      this.freelanceMotionIsShown = !this.freelanceMotionIsShown;
     }
     else if(id=="latinamerican_detail"){
       this.latinAmericanIsShown = !this.latinAmericanIsShown;

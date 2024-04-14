@@ -1,6 +1,8 @@
 {
-    "I'm a Developer": "Skillful in: ",
+    "I'm a Developer": "Proficient in: ",
     "Full-Stack": "Full-Stack",
+    "Backend": "Backend",
+    "Frontend": "Frontend",
     "WEB": "WEB",
     "Mobile": "Mobil",
     "Welcome": "Welcome",
@@ -35,11 +37,16 @@
     "Spanish": "Spanish",
     "English": "English",
     "Native": "Native",
-    "Advanced intermediate": "Advanced intermediate",
+    "Advanced intermediate": "Upper intermediate",
     "Data of interest": "Data of interest",
     "Sport": "Sport",
     "Video game": "Videogames",
     "View certificate": "View certificate",
+    "motioncx1": "Development and addition of new endpoints in microservices using .NET.",
+    "motioncx2": "Development and addition of new functionalities in the web client using Angular.",
+    "motioncx3": "Development and addition of new functionalities in the desktop client using React.",
+    "motioncx4": "Code versioning and management of different environments through Continuous Delivery (CD).",
+    "motioncx5": "Documentation and management of new features using JIRA and GitHub.",
     "lafuente1": "Development of landing pages integrated to sugarCRM using angular and rest services.",
     "lafuente2": "Development of custom REST services on sugarCRM using MySQL procedures.",
     "lafuente3": "Customization of modules within SugarCRM using angular and REST services.",
@@ -72,5 +79,11 @@
     "latinamericanmall7": "Migration of hosting, web pages and databases.",
     "latinamericanmall8": "Preparation of monthly sales reports for the accounting area.",
     "years": "years",
-    "months": "months"
-  }
+    "months": "months",
+    "Project Details": "Project Details",
+    "E-commerce Website": "E-commerce Website",
+    "Online Resume": "Online Resume",
+    "Code Source": "Code Source",
+    "Portfolio details": "Online resume project to increase my visibility as a frontend developer. Based on Angular with HTML and CSS, it has i18n technology for deployment in two languages.",
+    "Ecommerce details": "E-commerce project for HANSA, an important trader in Bolivia. Product, category and price data was migrated from a previous project. For this project we are based on Magento 2 with B2C and B2B coverage. In addition, E-commerce was integrated with CRM and ERP through REST services."
+}
