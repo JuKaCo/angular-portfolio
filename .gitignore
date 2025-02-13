@@ -101,3 +101,10 @@ typings/
 
 # TernJS port file
 .tern-port
+
+# Angular cache directory
+.angular/
+
+# Temporary files
+.DS_Store
+Thumbs.db

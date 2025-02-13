@@ -1,4 +1,3 @@
-
 .bar-title{
     content: "";
     display: block;
@@ -14,3 +13,63 @@ h2{
     color: rgb(22, 59, 90);
 }
 html{scroll-behavior: smooth;}
+
+/* Estilos globales para mejorar el contraste */
+body {
+    color: #ffffff !important;
+}
+
+.nav-link, 
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+p, span, div {
+    color: #f0f0f0 !important;
+}
+
+/* Iconos más brillantes */
+.fa, 
+.fas,
+.far,
+.fab {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Ajuste para elementos específicos que necesitan más contraste */
+.hero-container h1 {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    font-weight: 600;
+}
+
+.hero-container p {
+    color: #f8f9fa !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Ajuste para la barra de navegación */
+.navbar {
+    background: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Efecto hover para enlaces */
+a:hover {
+    color: #00ffff !important;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* Typed.js cursor más visible */
+.typed-cursor {
+    color: #ffffff !important;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}

@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { ReferencesComponent } from './references/references.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './home/home.component';
+import { Background3DComponent } from './background3d/background3d.component';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
@@ -28,7 +29,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     ContactComponent,
     HeaderComponent,
     ReferencesComponent,
-    HomeComponent
+    HomeComponent,
+    Background3DComponent
   ],
   imports: [
     BrowserModule,

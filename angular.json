@@ -133,7 +133,6 @@
       }
     }
   },
-  "defaultProject": "my-portfolio",
   "cli": {
     "analytics": false
   }
