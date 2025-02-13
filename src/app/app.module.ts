@@ -51,7 +51,7 @@ export class AppModule { }
 export function translateFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(
     httpClient,
-    '/angular-portfolio/assets/i18n/', // or whatever path you're using
+    './assets/i18n/', // cambiado para desarrollo local
     '.json'
   );
 }
