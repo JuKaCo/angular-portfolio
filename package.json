@@ -29,22 +29,26 @@
     "font-awesome": "^4.7.0",
     "gh-pages": "^6.3.0",
     "jquery": "^3.7.1",
-    "ng-particles": "^3.12.0",
-    "rxjs": "~7.8.1",
+    "rxjs": "~7.8.0",
     "three": "^0.155.0",
-    "tslib": "^2.6.2",
+    "tslib": "^2.3.0",
     "typed.js": "^2.0.16",
-    "venobox": "^2.0.4",
-    "zone.js": "~0.13.1"
+    "@types/jquery": "^3.5.32",
+    "zone.js": "~0.13.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^19.1.7",
+    "@angular-devkit/build-angular": "^16.2.0",
     "@angular/cli": "^16.2.0",
     "@angular/compiler-cli": "^16.2.0",
-    "@types/aos": "^3.0.7",
-    "@types/jquery": "^3.5.17",
-    "@types/node": "^20.5.7",
-    "angular-cli-ghpages": "^2.0.3",
-    "typescript": "~5.1.6"
+    "@types/aos": "^3.0.4",
+    "@types/jasmine": "~4.3.0",
+    "angular-cli-ghpages": "^1.0.7",
+    "jasmine-core": "~4.6.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.1.3"
   }
 }
