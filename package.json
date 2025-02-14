@@ -27,6 +27,7 @@
     "aos": "^2.3.4",
     "bootstrap": "^5.3.1",
     "font-awesome": "^4.7.0",
+    "gh-pages": "^6.3.0",
     "jquery": "^3.7.1",
     "ng-particles": "^3.12.0",
     "rxjs": "~7.8.1",
@@ -37,13 +38,13 @@
     "zone.js": "~0.13.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^16.2.0",
+    "@angular-devkit/build-angular": "^19.1.7",
     "@angular/cli": "^16.2.0",
     "@angular/compiler-cli": "^16.2.0",
     "@types/aos": "^3.0.7",
     "@types/jquery": "^3.5.17",
     "@types/node": "^20.5.7",
-    "angular-cli-ghpages": "^1.0.7",
+    "angular-cli-ghpages": "^2.0.3",
     "typescript": "~5.1.6"
   }
 }
