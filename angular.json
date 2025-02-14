@@ -26,8 +26,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/robots.txt",
-              "src/sitemap.xml",
-              "src/google5f6465db9a8c3a97.html"
+              "src/sitemap.xml"
             ],
             "styles": [
               "node_modules/aos/dist/aos.css",
