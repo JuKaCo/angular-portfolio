@@ -22,7 +22,7 @@ import * as THREE from 'three';
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.6);
       z-index: -1;
     }
   `]
@@ -33,11 +33,12 @@ export class Background3DComponent implements OnInit, AfterViewInit, OnDestroy {
   private renderer!: THREE.WebGLRenderer;
   private scene!: THREE.Scene;
   private camera!: THREE.PerspectiveCamera;
-  private points!: THREE.Points;
-  private lines!: THREE.LineSegments;
+  private starField!: THREE.Points;
+  private nebula!: THREE.Points;
   private animationFrameId: number = 0;
   private mouseX: number = 0;
   private mouseY: number = 0;
+  private time: number = 0;
 
   constructor() { }
 
@@ -55,15 +56,15 @@ export class Background3DComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.animationFrameId) {
       cancelAnimationFrame(this.animationFrameId);
     }
-    if (this.points) {
-      this.scene.remove(this.points);
-      (this.points.geometry as THREE.BufferGeometry).dispose();
-      (this.points.material as THREE.Material).dispose();
+    if (this.starField) {
+      this.scene.remove(this.starField);
+      (this.starField.geometry as THREE.BufferGeometry).dispose();
+      (this.starField.material as THREE.Material).dispose();
     }
-    if (this.lines) {
-      this.scene.remove(this.lines);
-      (this.lines.geometry as THREE.BufferGeometry).dispose();
-      (this.lines.material as THREE.Material).dispose();
+    if (this.nebula) {
+      this.scene.remove(this.nebula);
+      (this.nebula.geometry as THREE.BufferGeometry).dispose();
+      (this.nebula.material as THREE.Material).dispose();
     }
     if (this.renderer) {
       this.renderer.dispose();
@@ -78,13 +79,13 @@ export class Background3DComponent implements OnInit, AfterViewInit, OnDestroy {
     // Scene setup
     this.scene = new THREE.Scene();
     
-    // Camera setup
+    // Camera setup with increased FOV for more dramatic effect
     this.camera = new THREE.PerspectiveCamera(
-      75, window.innerWidth / window.innerHeight, 0.1, 1000
+      85, window.innerWidth / window.innerHeight, 0.1, 2000
     );
-    this.camera.position.z = 50;
+    this.camera.position.z = 100;
 
-    // Renderer setup
+    // Renderer setup with better quality
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
       alpha: true,
@@ -92,116 +93,147 @@ export class Background3DComponent implements OnInit, AfterViewInit, OnDestroy {
     });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.setClearColor(0x000000, 1);
+    this.renderer.setPixelRatio(window.devicePixelRatio);
 
-    // Create points
-    const pointsGeometry = new THREE.BufferGeometry();
-    const pointsCount = 1000;
-    const positions = new Float32Array(pointsCount * 3);
-    const colors = new Float32Array(pointsCount * 3);
+    // Create starfield
+    const starGeometry = new THREE.BufferGeometry();
+    const starCount = 3000;
+    const starPositions = new Float32Array(starCount * 3);
+    const starColors = new Float32Array(starCount * 3);
+    const starSizes = new Float32Array(starCount);
 
-    for(let i = 0; i < pointsCount * 3; i += 3) {
-      positions[i] = (Math.random() - 0.5) * 100;
-      positions[i + 1] = (Math.random() - 0.5) * 100;
-      positions[i + 2] = (Math.random() - 0.5) * 100;
-
-      // Color gradient from purple to blue (más suave y menos brillante)
-      colors[i] = 0.2;  // R
-      colors[i + 1] = 0.2;  // G
-      colors[i + 2] = 0.5;  // B
-    }
-
-    pointsGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    pointsGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-
-    const pointsMaterial = new THREE.PointsMaterial({
-      size: 0.5,
-      vertexColors: true,
-      transparent: true,
-      opacity: 0.5,
-      blending: THREE.AdditiveBlending
-    });
-
-    this.points = new THREE.Points(pointsGeometry, pointsMaterial);
-
-    // Create lines
-    const linesGeometry = new THREE.BufferGeometry();
-    const linePositions = new Float32Array(pointsCount * 2 * 3); // 2 points per line
-    const lineColors = new Float32Array(pointsCount * 2 * 3);
-
-    for(let i = 0; i < pointsCount * 3; i += 6) {
-      // First point
-      linePositions[i] = positions[i/2];
-      linePositions[i + 1] = positions[i/2 + 1];
-      linePositions[i + 2] = positions[i/2 + 2];
-
-      // Second point (connecting to nearest point)
-      let nearestIndex = this.findNearestPoint(positions[i/2], positions[i/2 + 1], positions[i/2 + 2], positions);
-      linePositions[i + 3] = positions[nearestIndex];
-      linePositions[i + 4] = positions[nearestIndex + 1];
-      linePositions[i + 5] = positions[nearestIndex + 2];
-
-      // Line colors (gradient from purple to blue)
-      lineColors[i] = 0.2;
-      lineColors[i + 1] = 0.2;
-      lineColors[i + 2] = 0.5;
-      lineColors[i + 3] = 0.2;
-      lineColors[i + 4] = 0.2;
-      lineColors[i + 5] = 0.5;
-    }
-
-    linesGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
-    linesGeometry.setAttribute('color', new THREE.BufferAttribute(lineColors, 3));
-
-    const linesMaterial = new THREE.LineBasicMaterial({
-      vertexColors: true,
-      transparent: true,
-      opacity: 0.1,
-      blending: THREE.AdditiveBlending
-    });
-
-    this.lines = new THREE.LineSegments(linesGeometry, linesMaterial);
-
-    this.scene.add(this.points);
-    this.scene.add(this.lines);
-  }
-
-  private findNearestPoint(x: number, y: number, z: number, positions: Float32Array): number {
-    let minDist = Infinity;
-    let nearestIndex = 0;
-
-    for(let i = 0; i < positions.length; i += 3) {
-      if (positions[i] === x && positions[i + 1] === y && positions[i + 2] === z) continue;
-
-      const dx = positions[i] - x;
-      const dy = positions[i + 1] - y;
-      const dz = positions[i + 2] - z;
-      const dist = dx * dx + dy * dy + dz * dz;
-
-      if (dist < minDist) {
-        minDist = dist;
-        nearestIndex = i;
-      }
-    }
-
-    return nearestIndex;
-  }
-
-  private animate() {
-    this.animationFrameId = requestAnimationFrame(() => this.animate());
-
-    if (this.points && this.lines) {
-      // Rotate based on mouse position
-      const targetRotationX = (this.mouseY * 0.001);
-      const targetRotationY = (this.mouseX * 0.001);
-
-      this.points.rotation.x += (targetRotationX - this.points.rotation.x) * 0.05;
-      this.points.rotation.y += (targetRotationY - this.points.rotation.y) * 0.05;
+    for(let i = 0; i < starCount * 3; i += 3) {
+      // Distribute stars in a sphere
+      const radius = Math.random() * 1000;
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(Math.random() * 2 - 1);
       
-      this.lines.rotation.x = this.points.rotation.x;
-      this.lines.rotation.y = this.points.rotation.y;
+      starPositions[i] = radius * Math.sin(phi) * Math.cos(theta);
+      starPositions[i + 1] = radius * Math.sin(phi) * Math.sin(theta);
+      starPositions[i + 2] = radius * Math.cos(phi);
+
+      // Random star colors (white to blue to purple)
+      const colorChoice = Math.random();
+      if (colorChoice > 0.8) {
+        // White stars
+        starColors[i] = 1.0;
+        starColors[i + 1] = 1.0;
+        starColors[i + 2] = 1.0;
+      } else if (colorChoice > 0.4) {
+        // Blue stars
+        starColors[i] = 0.4;
+        starColors[i + 1] = 0.6;
+        starColors[i + 2] = 1.0;
+      } else {
+        // Purple stars
+        starColors[i] = 0.6;
+        starColors[i + 1] = 0.2;
+        starColors[i + 2] = 0.8;
+      }
+
+      // Random star sizes
+      starSizes[i/3] = Math.random() * 2 + 0.5;
     }
 
-    this.renderer.render(this.scene, this.camera);
+    starGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+    starGeometry.setAttribute('color', new THREE.BufferAttribute(starColors, 3));
+    starGeometry.setAttribute('size', new THREE.BufferAttribute(starSizes, 1));
+
+    const starMaterial = new THREE.ShaderMaterial({
+      uniforms: {
+        time: { value: 0 }
+      },
+      vertexShader: `
+        attribute float size;
+        varying vec3 vColor;
+        void main() {
+          vColor = color;
+          vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+          gl_PointSize = size * (300.0 / -mvPosition.z);
+          gl_Position = projectionMatrix * mvPosition;
+        }
+      `,
+      fragmentShader: `
+        varying vec3 vColor;
+        void main() {
+          float r = length(gl_PointCoord - vec2(0.5, 0.5));
+          if (r > 0.5) discard;
+          gl_FragColor = vec4(vColor, 1.0) * (1.0 - 2.0 * r);
+        }
+      `,
+      vertexColors: true,
+      transparent: true,
+      blending: THREE.AdditiveBlending
+    });
+
+    this.starField = new THREE.Points(starGeometry, starMaterial);
+
+    // Create nebula effect
+    const nebulaGeometry = new THREE.BufferGeometry();
+    const nebulaCount = 1000;
+    const nebulaPositions = new Float32Array(nebulaCount * 3);
+    const nebulaColors = new Float32Array(nebulaCount * 3);
+    const nebulaSizes = new Float32Array(nebulaCount);
+
+    for(let i = 0; i < nebulaCount * 3; i += 3) {
+      // Create cloud-like formations
+      const angle = Math.random() * Math.PI * 2;
+      const radius = 50 + Math.random() * 100;
+      const height = (Math.random() - 0.5) * 50;
+      
+      nebulaPositions[i] = Math.cos(angle) * radius;
+      nebulaPositions[i + 1] = height;
+      nebulaPositions[i + 2] = Math.sin(angle) * radius;
+
+      // Nebula colors (purple to blue)
+      nebulaColors[i] = 0.5 + Math.random() * 0.2;
+      nebulaColors[i + 1] = 0.2 + Math.random() * 0.1;
+      nebulaColors[i + 2] = 0.8 + Math.random() * 0.2;
+
+      // Larger sizes for nebula particles
+      nebulaSizes[i/3] = Math.random() * 15 + 5;
+    }
+
+    nebulaGeometry.setAttribute('position', new THREE.BufferAttribute(nebulaPositions, 3));
+    nebulaGeometry.setAttribute('color', new THREE.BufferAttribute(nebulaColors, 3));
+    nebulaGeometry.setAttribute('size', new THREE.BufferAttribute(nebulaSizes, 1));
+
+    const nebulaMaterial = new THREE.ShaderMaterial({
+      uniforms: {
+        time: { value: 0 }
+      },
+      vertexShader: `
+        attribute float size;
+        varying vec3 vColor;
+        uniform float time;
+        void main() {
+          vColor = color;
+          vec3 pos = position;
+          pos.x += sin(time * 0.001 + position.z * 0.05) * 2.0;
+          pos.y += cos(time * 0.001 + position.x * 0.05) * 2.0;
+          vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
+          gl_PointSize = size * (300.0 / -mvPosition.z);
+          gl_Position = projectionMatrix * mvPosition;
+        }
+      `,
+      fragmentShader: `
+        varying vec3 vColor;
+        void main() {
+          float r = length(gl_PointCoord - vec2(0.5, 0.5));
+          if (r > 0.5) discard;
+          gl_FragColor = vec4(vColor, 0.3) * (1.0 - 2.0 * r * r);
+        }
+      `,
+      vertexColors: true,
+      transparent: true,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    });
+
+    this.nebula = new THREE.Points(nebulaGeometry, nebulaMaterial);
+
+    this.scene.add(this.starField);
+    this.scene.add(this.nebula);
   }
 
   private handleResize() {
@@ -217,5 +249,26 @@ export class Background3DComponent implements OnInit, AfterViewInit, OnDestroy {
       this.mouseX = event.clientX - window.innerWidth / 2;
       this.mouseY = event.clientY - window.innerHeight / 2;
     });
+  }
+
+  private animate() {
+    this.animationFrameId = requestAnimationFrame(() => this.animate());
+
+    this.time += 1;
+
+    if (this.starField && this.nebula) {
+      // Smooth camera movement based on mouse position
+      this.camera.position.x += (this.mouseX * 0.05 - this.camera.position.x) * 0.01;
+      this.camera.position.y += (-this.mouseY * 0.05 - this.camera.position.y) * 0.01;
+      this.camera.lookAt(this.scene.position);
+
+      // Update nebula animation
+      (this.nebula.material as THREE.ShaderMaterial).uniforms.time.value = this.time;
+
+      // Slow rotation of the entire scene
+      this.scene.rotation.y += 0.0003;
+    }
+
+    this.renderer.render(this.scene, this.camera);
   }
 }
