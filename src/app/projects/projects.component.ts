@@ -12,7 +12,20 @@ export class ProjectsComponent implements OnInit {
   pokedexIsShown: boolean = false;
   riddleIsShown: boolean = false;
 
+  modalImage: string | null = null;
+  modalTitle: string | null = null;
+
   constructor() { }
+
+  openModal(image: string, title: string) {
+    this.modalImage = image;
+    this.modalTitle = title;
+  }
+
+  closeModal() {
+    this.modalImage = null;
+    this.modalTitle = null;
+  }
 
   detailOnClick(project: String) {
     if (project == "teamTraveler") {

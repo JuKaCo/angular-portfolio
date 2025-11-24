@@ -7,10 +7,10 @@ import { EducationComponent } from './education/education.component';
 import { ProjectsComponent } from './projects/projects.component';
 
 
-const routes: Routes = [{path:'',component:AppComponent},{path:'competences',component:CompetencesComponent},{path:'projects',component:ProjectsComponent},{path:'cv',component:EducationComponent},{path:'about',component:AboutComponent}];
+const routes: Routes = [{ path: '', component: AppComponent }, { path: 'competences', component: CompetencesComponent }, { path: 'projects', component: ProjectsComponent }, { path: 'cv', component: EducationComponent }, { path: 'about', component: AboutComponent }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

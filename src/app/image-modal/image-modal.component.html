@@ -1,0 +1,7 @@
+<div class="modal-backdrop" *ngIf="imageSrc" (click)="onClose()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <button class="close-btn" (click)="onClose()">&times;</button>
+        <img [src]="imageSrc" [alt]="title" class="modal-image">
+        <div class="modal-caption" *ngIf="title">{{ title }}</div>
+    </div>
+</div>
