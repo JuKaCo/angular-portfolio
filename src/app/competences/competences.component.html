@@ -3,156 +3,22 @@
         <h2><strong>{{"Skills" | translate}}</strong></h2>
         <span class="bar-title mb-5"></span>
         <div class="row mt-2">
-                <div class="col-lg-4" data-aos="fade-up "
+            <div class="col-lg-4" *ngFor="let category of skillCategories" data-aos="fade-up"
                 data-aos-anchor-placement="center-bottom" data-aos-delay="300">
-                    <h5 class="h5"><strong>{{"Technologies" | translate}}</strong></h5>
-                    <div id="skillgraph">
-                        <div class='row skill-row' >
-                            <div class="label d-flex flex-row" >
-                                <span class="skillLabel">SQL, databases</span>
-                                <span class="skill-percent">80%</span>
-                            </div>
-                            <span class='skillData-Wrapper'>
-                            <span class='very-good skillData bg-rust'></span></span>
+                <h5 class="h5"><strong>{{category.name | translate}}</strong></h5>
+                <div id="skillgraph" class="panel panel-default">
+                    <div class='row skill-row' *ngFor="let skill of category.skills">
+                        <div class="label d-flex flex-row">
+                            <span class='skillLabel'>{{skill.name | translate}}</span>
+                            <span class="skill-percent">{{skill.percentage}}%</span>
                         </div>
-                        <div class='row skill-row'>
-                            <div class="label d-flex flex-row" >
-                                <span class='skillLabel'>PHP, .NET (Back end)</span>
-                                <span class="skill-percent">80%</span>
-                            </div>
-                            <span class='skillData-Wrapper'>
-                            <span class='very-good skillData bg-rust'></span></span>
-                        </div>
-                        <div class='row skill-row'>
-
-                            <div class="label d-flex flex-row" >
-                                <span class='skillLabel'>Android, MAUI (Mobile)</span>
-                                <span class=" skill-percent">50%</span>
-                            </div>
-                            <span class='skillData-Wrapper'>
-                            <span class='average skillData bg-rust'></span></span>
-                        </div>
-                        <div class='row skill-row'>
-                            <div class="label d-flex flex-row" >
-                                <span class='skillLabel'>BootStrap, Material, PrimeNG</span>
-                                <span class=" skill-percent">80%</span>
-                            </div>
-
-                            <span class='skillData-Wrapper'>
-                            <span class='very-good skillData bg-rust' ></span></span>
-                        </div>
-                        <div class='row skill-row'>
-                            <div class="label d-flex flex-row" >
-                                <span class='skillLabel'>JavaScript, Angular, React(Front end)</span>
-                                <span class="skill-percent">90%</span>
-                            </div>
-                            <span class='skillData-Wrapper'>
-                            <span class='excellent skillData bg-rust' ></span></span>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="col-lg-4" data-aos="fade-down"
-                data-aos-anchor-placement="center-bottom" data-aos-delay="300">
-                    <h5 class="h5"><strong>{{"Tools" | translate}}</strong></h5>
-                    <div id="skillgraph" class="panel panel-default">
-                        <div class='row skill-row'>
-                            <div class="label d-flex flex-row" >
-                                <span class='skillLabel'>Git & Postman</span>
-                                <span class="skill-percent">90%</span>
-                            </div>
-                            <span class='skillData-Wrapper'>
-                            <span class='excellent skillData bg-rust' ></span></span>
-                        </div>
-                        <div class='row skill-row'>
-                            <div class="label d-flex flex-row" >
-                                <span class='skillLabel'>Adobe Commerce (Magento 2)</span>
-                                <span class="skill-percent">90%</span>
-                            </div>
-
-                            <span class='skillData-Wrapper'>
-                            <span class='excellent skillData bg-rust'></span></span>
-                        </div>
-
-                        <div class='row skill-row'>
-                            <div class="label d-flex flex-row" >
-                                <span class='skillLabel'>{{"Linux Servers" | translate}}</span>
-                                <span class="skill-percent">80%</span>
-                            </div>
-
-                            <span class='skillData-Wrapper'>
-                            <span class='very-good skillData bg-rust'></span></span>
-                        </div>
-                        <div class='row skill-row'>
-                            <div class="label d-flex flex-row" >
-                                <span class='skillLabel'>Navicat, Workbench</span>
-                                <span class="skill-percent">90%</span>
-                            </div>
-
-                            <span class='skillData-Wrapper'>
-                            <span class='excellent skillData bg-rust'></span></span>
-                        </div>
-                        <div class='row skill-row'>
-                            <div class="label d-flex flex-row" >
-                                <span class='skillLabel'>Mulesoft, ActiveMQ</span>
-                                <span class="skill-percent">70%</span>
-                            </div>
-                            <span class='skillData-Wrapper'>
-                            <span class='good skillData bg-rust' ></span></span>
-                        </div>
+                        <span class='skillData-Wrapper'>
+                            <span class='skillData bg-rust' [ngClass]="skill.levelClass"
+                                [style.width.%]="skill.percentage"></span>
+                        </span>
                     </div>
                 </div>
-                <div class="col-lg-4" data-aos="fade-up"
-                data-aos-anchor-placement="center-bottom" data-aos-delay="300">
-                    <h5 class="h5"><strong>{{"Methodologies" | translate}}</strong></h5>
-                    <div id="skillgraph" class="panel panel-default">
-                        <div class='row skill-row'>
-                            <div class="label d-flex flex-row" >
-                                <span class='skillLabel'>Scrum</span>
-                                <span class=" skill-percent">80%</span>
-                            </div>
-                            <span class='skillData-Wrapper'>
-                            <span class='very-good skillData bg-rust'></span></span>
-                        </div>
-
-                        <div class='row skill-row'>
-                            <div class="label d-flex flex-row" >
-                                <span class='skillLabel'>PMBOK</span>
-                                <span class="skill-percent">50%</span>
-                            </div>
-
-                            <span class='skillData-Wrapper'>
-                            <span class='average skillData bg-rust'></span></span>
-                        </div>
-                        <div class='row skill-row'>
-                            <div class="label d-flex flex-row" >
-                                <span class='skillLabel'>{{"Design Thinking" | translate}}</span>
-                                <span class="skill-percent">70%</span>
-                            </div>
-
-                            <span class='skillData-Wrapper'>
-                            <span class='good skillData bg-rust'></span></span>
-                        </div>
-                        <div class='row skill-row'>
-                            <div class="label d-flex flex-row" >
-                                <span class='skillLabel'>CD & CI</span>
-                                <span class="skill-percent">50%</span>
-                            </div>
-
-                            <span class='skillData-Wrapper'>
-                            <span class='average skillData bg-rust'></span></span>
-                        </div>
-                        <div class='row skill-row'>
-                            <div class="label d-flex flex-row" >
-                                <span class='skillLabel'>{{"Software architecture" | translate}}</span>
-                                <span class="skill-percent">50%</span>
-                            </div>
-                            <span class='skillData-Wrapper'>
-                            <span class='average skillData bg-rust'></span></span>
-                        </div>
-                    </div>
-                </div>
+            </div>
         </div>
     </div>
 </section>

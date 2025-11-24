@@ -1,72 +1,56 @@
-.bg-lightgray, .skillData-Wrapper {
-    background-color: #ddd;
-}
+.bg-lightgray,
 .skillData-Wrapper {
-    width: 100%;
+  background-color: #ddd;
 }
 
-
-
-
+.skillData-Wrapper {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  display: block;
+}
 
 #skillgraph {
-  padding: 1em; }
+  padding: 1em;
+}
 
-
-
-.skill-percent{
+.skill-percent {
   margin-top: 10px;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
 }
 
-.skillLabel{
+.skillLabel {
   width: 100%;
   margin-top: 10px;
-
   font-weight: 600;
   font-family: "Poppins", sans-serif;
   color: #050d18d7;
+}
 
+.skillData-Wrapper,
+.label {
+  width: 100%;
 }
-.competence-Wrapper{
-  line-height: 0.1 0.7em;
-  height: 12px;
-  width: .1em;
-  float: left;
-  color: white;
-  text-align: center;
-}
-.skillData-Wrapper, .label {
-  width: 100%; }
-.skillData, .skillData-Wrapper {
-  line-height: 0.1 0.7em;
-  height: 12px;
-  
-  float: left;
-  color: white;
-  text-align: center; }
 
-.excellent{
-  width: 90%;
+.skillData {
+  height: 12px;
+  display: block;
+  background-color: #149ddd;
+  border-radius: 10px;
+  animation: grow 2s ease-out forwards;
 }
-.very-good{
-  width: 80%;
+
+@keyframes grow {
+  from {
+    width: 0;
+  }
 }
-.good{
-  width: 70%;
+
+.bg-rust {
+  background-color: #149ddd;
 }
-.average{
-  width: 50%;
-}
- .bg-rust {
-    background-color: #149ddd;
-}
-a{
+
+a {
   text-decoration: none;
 }
-
-
-
-
-
