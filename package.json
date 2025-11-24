@@ -28,12 +28,10 @@
     "bootstrap": "^5.3.1",
     "font-awesome": "^4.7.0",
     "gh-pages": "^6.3.0",
-    "jquery": "^3.7.1",
     "rxjs": "~7.8.0",
     "three": "^0.155.0",
     "tslib": "^2.3.0",
     "typed.js": "^2.0.16",
-    "@types/jquery": "^3.5.32",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
