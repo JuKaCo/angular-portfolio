@@ -1,0 +1,18 @@
+---
+import Section from './Section.astro';
+import ProjectCard from './ProjectCard.astro';
+import { projectImages } from '../../data/images';
+import type { LocaleData } from '../../data/types';
+
+interface Props {
+  data: LocaleData;
+}
+const { data } = Astro.props;
+const { projects, ui } = data;
+---
+
+<Section id="portfolio" title={ui.sections.portfolio}>
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    {projects.map((p) => <ProjectCard project={p} image={projectImages[p.image]} ui={ui} />)}
+  </div>
+</Section>

@@ -1,0 +1,30 @@
+---
+import { Icon } from 'astro-icon/components';
+import Section from './Section.astro';
+import SkillBar from '../react/SkillBar.tsx';
+import type { LocaleData } from '../../data/types';
+
+interface Props {
+  data: LocaleData;
+}
+const { data } = Astro.props;
+const { skills, ui } = data;
+---
+
+<Section id="skills" title={ui.sections.skills}>
+  <div class="grid gap-6 lg:grid-cols-3">
+    {
+      skills.map((cat) => (
+        <div class="glass reveal rounded-2xl p-6">
+          <h3 class="mb-5 flex items-center gap-2 text-lg font-semibold">
+            <Icon name={cat.icon} class="h-5 w-5 text-[--color-accent-bright]" />
+            {cat.name}
+          </h3>
+          {cat.skills.map((s) => (
+            <SkillBar client:visible name={s.name} percentage={s.percentage} level={s.level} />
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</Section>

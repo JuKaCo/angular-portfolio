@@ -1,0 +1,27 @@
+---
+import { getImage } from 'astro:assets';
+import Section from './Section.astro';
+import TestimonialsCarousel from '../react/TestimonialsCarousel.tsx';
+import { avatarImages } from '../../data/images';
+import type { LocaleData } from '../../data/types';
+
+interface Props {
+  data: LocaleData;
+}
+const { data } = Astro.props;
+const { testimonials, ui } = data;
+
+// Resolve optimized avatar URLs at build time, then pass plain strings to the island.
+const items = await Promise.all(
+  testimonials.map(async (t) => {
+    const img = await getImage({ src: avatarImages[t.avatar], width: 96, height: 96 });
+    return { quote: t.quote, name: t.name, role: t.role, avatar: img.src };
+  })
+);
+---
+
+<Section id="testimonials" title={ui.sections.testimonials}>
+  <div class="reveal">
+    <TestimonialsCarousel client:visible items={items} />
+  </div>
+</Section>

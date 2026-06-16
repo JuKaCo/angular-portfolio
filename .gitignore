@@ -102,9 +102,12 @@ typings/
 # TernJS port file
 .tern-port
 
-# Angular cache directory
-.angular/
+# Astro generated types & cache
+.astro/
 
 # Temporary files
 .DS_Store
 Thumbs.db
+
+# Pending: add via GitHub UI (needs workflow OAuth scope)
+.github/workflows/deploy.yml

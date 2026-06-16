@@ -1,0 +1,26 @@
+---
+// Root entry: redirect to a locale. Default to /en/, but prefer /es/ when the
+// visitor's browser language is Spanish. Works on static hosting (GitHub Pages).
+const base = import.meta.env.BASE_URL; // "/angular-portfolio/"
+const enUrl = `${base}en/`;
+const esUrl = `${base}es/`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Juan Carlos Condori Caviña — Portfolio</title>
+    <link rel="canonical" href={enUrl} />
+    <meta http-equiv="refresh" content={`0; url=${enUrl}`} />
+    <script is:inline define:vars={{ enUrl, esUrl }}>
+      const lang = (navigator.language || 'en').toLowerCase();
+      window.location.replace(lang.startsWith('es') ? esUrl : enUrl);
+    </script>
+  </head>
+  <body>
+    <p>Redirecting… <a href={enUrl}>Continue</a></p>
+  </body>
+</html>

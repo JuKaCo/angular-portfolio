@@ -1,0 +1,78 @@
+---
+import { getAbsoluteLocaleUrl } from 'astro:i18n';
+import { site, socials } from '../../data/site';
+import type { Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+}
+
+const { locale, title, description } = Astro.props;
+
+// Absolute URLs (honor site + base).
+const ogImageUrl = new URL(site.ogImage, Astro.site).href;
+const enUrl = getAbsoluteLocaleUrl('en', '');
+const esUrl = getAbsoluteLocaleUrl('es', '');
+const canonical = locale === 'es' ? esUrl : enUrl;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: site.name,
+  jobTitle: site.jobTitle,
+  email: `mailto:${site.email}`,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'El Alto, La Paz',
+    addressCountry: 'BO',
+  },
+  url: canonical,
+  image: ogImageUrl,
+  sameAs: socials.map((s) => s.href),
+};
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta
+  name="keywords"
+  content="Full Stack Developer, Web Developer, Frontend Developer, Backend Developer, E-commerce, Magento 2, Adobe Commerce, Juan Carlos Condori Caviña, Bolivia, Angular, React, Astro, TypeScript"
+/>
+<meta name="author" content={site.name} />
+<meta name="robots" content="index, follow" />
+<meta name="google-site-verification" content={site.googleSiteVerification} />
+
+<link rel="canonical" href={canonical} />
+<link rel="alternate" hreflang="en" href={enUrl} />
+<link rel="alternate" hreflang="es" href={esUrl} />
+<link rel="alternate" hreflang="x-default" href={enUrl} />
+
+<link rel="icon" type="image/x-icon" href={`${import.meta.env.BASE_URL}favicon.ico`} />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImageUrl} />
+<meta property="og:url" content={canonical} />
+<meta property="og:locale" content={locale === 'es' ? 'es_ES' : 'en_US'} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageUrl} />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+  rel="stylesheet"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

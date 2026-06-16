@@ -1,0 +1,49 @@
+---
+// Scroll-driven animations (GSAP + ScrollTrigger). Reveals `.reveal` elements
+// and applies parallax to `[data-parallax]`. Re-initializes after each Astro
+// View Transition via the astro:page-load event.
+---
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  function initScrollFX() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Clear triggers from a previous page (View Transitions).
+    ScrollTrigger.getAll().forEach((t) => t.kill());
+
+    if (reduce) {
+      document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
+      return;
+    }
+
+    document.querySelectorAll<HTMLElement>('.reveal').forEach((el) => {
+      ScrollTrigger.create({
+        trigger: el,
+        start: 'top 85%',
+        once: true,
+        onEnter: () => el.classList.add('is-visible'),
+      });
+    });
+
+    document.querySelectorAll<HTMLElement>('[data-parallax]').forEach((el) => {
+      const speed = parseFloat(el.dataset.parallax || '0.2');
+      gsap.to(el, {
+        yPercent: speed * 100,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+        },
+      });
+    });
+  }
+
+  document.addEventListener('astro:page-load', initScrollFX);
+</script>
