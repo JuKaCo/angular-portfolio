@@ -19,15 +19,15 @@ export const projects: Project[] = [
     liveUrl: 'https://quickytools.app',
     liveLabel: 'Open app',
   },
-  // {
-  //   title: 'CafeResto',
-  //   image: 'cafe-resto',
-  //   tech: 'Astro, TypeScript, Tailwind CSS',
-  //   description:
-  //     'A browser-based point-of-sale (POS) system for cafés and restaurants. Built with Astro, TypeScript, and Tailwind CSS.',
-  //   liveUrl: 'TODO',
-  //   liveLabel: 'Open app',
-  // },
+  {
+    title: 'CafeResto',
+    image: 'cafe-resto',
+    tech: 'Astro, TypeScript, Tailwind CSS',
+    description:
+      'A browser-based point-of-sale (POS) system for cafés and restaurants — table management, orders, products, and sales reports, all running client-side. Built with Astro, TypeScript, and Tailwind CSS.',
+    liveUrl: 'https://quickytools.app/en/demo/caferesto/',
+    liveLabel: 'Open demo',
+  },
   {
     title: 'Professional Portfolio',
     image: 'portfolio',

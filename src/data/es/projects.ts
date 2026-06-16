@@ -19,15 +19,15 @@ export const projects: Project[] = [
     liveUrl: 'https://quickytools.app',
     liveLabel: 'Abrir app',
   },
-  // {
-  //   title: 'CafeResto',
-  //   image: 'cafe-resto',
-  //   tech: 'Astro, TypeScript, Tailwind CSS',
-  //   description:
-  //     'Sistema de punto de venta (POS) en el navegador para cafeterías y restaurantes. Construido con Astro, TypeScript y Tailwind CSS.',
-  //   liveUrl: 'TODO',
-  //   liveLabel: 'Abrir app',
-  // },
+  {
+    title: 'CafeResto',
+    image: 'cafe-resto',
+    tech: 'Astro, TypeScript, Tailwind CSS',
+    description:
+      'Sistema de punto de venta (POS) en el navegador para cafeterías y restaurantes: gestión de mesas, órdenes, productos y reportes de ventas, todo del lado del cliente. Construido con Astro, TypeScript y Tailwind CSS.',
+    liveUrl: 'https://quickytools.app/en/demo/caferesto/',
+    liveLabel: 'Abrir demo',
+  },
   {
     title: 'Portafolio profesional',
     image: 'portfolio',
