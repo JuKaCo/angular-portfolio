@@ -1,0 +1,65 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import SeoHead from '../components/astro/SeoHead.astro';
+import SpaceBackground from '../components/react/SpaceBackground.tsx';
+import Nav from '../components/react/Nav.tsx';
+import { getData, type Locale } from '../i18n/ui';
+import { site } from '../data/site';
+import '../styles/global.css';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getData(locale);
+const otherLocale: Locale = locale === 'en' ? 'es' : 'en';
+
+// Section anchors live on the single page; the lang switch points to the other locale's home.
+const navLinks = [
+  { id: 'home', label: t.ui.nav.home },
+  { id: 'about', label: t.ui.nav.about },
+  { id: 'skills', label: t.ui.nav.skills },
+  { id: 'cv', label: t.ui.nav.cv },
+  { id: 'portfolio', label: t.ui.nav.portfolio },
+  { id: 'contact', label: t.ui.nav.contact },
+];
+
+const langSwitch = {
+  current: locale,
+  other: otherLocale,
+  otherUrl: getRelativeLocaleUrl(otherLocale, ''),
+  otherLabel: otherLocale.toUpperCase(),
+};
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <SeoHead locale={locale} title={t.ui.meta.title} description={t.ui.meta.description} />
+    <ClientRouter />
+    <noscript>
+      <style>
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body>
+    <!-- Interactive 3D starfield; persists across EN↔ES view transitions. -->
+    <SpaceBackground client:idle transition:persist transition:name="space-bg" />
+
+    <Nav client:load name={site.shortName} links={navLinks} lang={langSwitch} />
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="relative z-10 border-t border-white/5 py-8 text-center text-sm text-[--color-ink-soft]">
+      <p>© {site.name}</p>
+    </footer>
+  </body>
+</html>

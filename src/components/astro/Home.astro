@@ -1,0 +1,27 @@
+---
+import { Icon } from 'astro-icon/components';
+import Hero from '../react/Hero.tsx';
+import { site } from '../../data/site';
+import type { LocaleData } from '../../data/types';
+
+interface Props {
+  data: LocaleData;
+}
+const { data } = Astro.props;
+const { hero } = data;
+---
+
+<section
+  id="home"
+  class="relative z-10 flex min-h-screen flex-col items-center justify-center"
+>
+  <Hero client:load name={site.name} intro={hero.intro} keywords={hero.keywords} />
+
+  <a
+    href="#about"
+    aria-label="Scroll to content"
+    class="absolute bottom-8 left-1/2 -translate-x-1/2 text-[--color-ink-soft] transition-colors hover:text-[--color-accent-bright]"
+  >
+    <Icon name="lucide:chevrons-down" class="h-7 w-7 animate-bounce" />
+  </a>
+</section>

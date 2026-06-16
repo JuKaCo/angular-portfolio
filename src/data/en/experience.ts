@@ -1,0 +1,85 @@
+import type { Job } from '../types';
+
+export const experience: Job[] = [
+  {
+    title: 'Full Stack Developer (.NET, Microservices, Angular, React)',
+    company: 'MotionCX',
+    location: 'Ohio, US (Remote)',
+    period: '2022 · 2 years',
+    bullets: [
+      'Developed and implemented new microservice endpoints using .NET',
+      'Enhanced web client functionality using the Angular framework',
+      'Implemented new features in a desktop application using React',
+      'Managed code versioning and multi-environment deployments through Continuous Delivery (CD)',
+      'Led feature documentation and tracking using JIRA and GitHub',
+    ],
+  },
+  {
+    title: 'Full Stack Developer (CRM, Angular, Web Services)',
+    company: 'Grupo La Fuente',
+    location: 'Santa Cruz, BO',
+    period: '2021 · 6 months',
+    bullets: [
+      'Engineered SugarCRM-integrated landing pages using Angular and REST services',
+      'Developed custom REST services in SugarCRM utilizing MySQL stored procedures',
+      'Customized SugarCRM modules through Angular integration and REST services',
+      'Orchestrated deployment of modules and services across testing and production environments',
+    ],
+  },
+  {
+    title: 'Backend Developer (Slim, Angular, Web Services)',
+    company: 'CEASS',
+    location: 'La Paz, BO',
+    period: '2021 · 5 months',
+    bullets: [
+      'Redesigned and optimized legacy inventory and sales system database architecture',
+      'Engineered REST services using Slim PHP for the new inventory system implementation',
+      'Led API development and testing coordination using Postman for the new REST services',
+    ],
+  },
+  {
+    title: 'Full Stack Developer (Slim, Angular, Web Services)',
+    company: 'AGEMED',
+    location: 'La Paz, BO',
+    period: '2020 – 2021 · 7 months',
+    bullets: [
+      'Architected reactive forms for new modules in Angular 12',
+      'Developed REST services for new modules using Slim PHP',
+      'Modernized the institutional website using contemporary CMS technologies',
+      'Implemented a push notification service for import-procedure system users',
+    ],
+  },
+  {
+    title: 'E-commerce Project Manager',
+    company: 'Hansa Ltda.',
+    location: 'La Paz, BO',
+    period: '2017 – 2020 · 3 years',
+    bullets: [
+      'Conducted e-commerce platform evaluation and proposed a Magento open source solution',
+      'Deployed and configured Magento 2.2.2 on CentOS 7, including all required services',
+      'Successfully migrated products, categories, and attributes to the new Magento 2 platform',
+      'Implemented custom themes, translations, and client-requested plugins',
+      'Customized the Magento frontend and created new pages using native CMS capabilities',
+      'Integrated B2B functionality through third-party vendor solutions',
+      'Enhanced the checkout module to display real-time buyer credit limits',
+      'Orchestrated integration between Magento, CRM, ERP, and Data Warehouse for seamless business operations',
+      'Optimized server performance for test and production Magento environments',
+    ],
+  },
+  {
+    title: 'E-commerce Developer',
+    company: 'Latin American Malls',
+    location: 'La Paz, BO',
+    period: '2016 – 2017 · 1 year',
+    bullets: [
+      'Enhanced osCommerce-based web stores with new functionalities',
+      'Managed database administration and developed new API endpoints',
+      'Streamlined marketing campaign updates across multiple online stores',
+      'Integrated multiple payment gateways including PayPal and Stripe',
+      'Developed an Android mobile application for supplier management',
+      'Optimized the address-entry system for a Brazilian e-commerce platform',
+      'Executed successful migration of hosting infrastructure, web assets, and databases',
+      'Generated comprehensive monthly sales reports for the accounting department',
+    ],
+  },
+];

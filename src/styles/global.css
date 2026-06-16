@@ -1,0 +1,112 @@
+@import 'tailwindcss';
+
+/* ---- Design tokens (Tailwind 4 CSS-first config) ---- */
+@theme {
+  --color-space: #05060d;
+  --color-space-soft: #0b0f1f;
+  --color-panel: rgba(255, 255, 255, 0.04);
+  --color-panel-border: rgba(255, 255, 255, 0.08);
+  --color-accent: #149ddd;
+  --color-accent-bright: #00ffff;
+  --color-accent-purple: #9a5cff;
+  --color-ink: #e7ecf5;
+  --color-ink-soft: #9aa6bd;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Space Grotesk', var(--font-sans);
+
+  --shadow-glow: 0 0 40px -10px rgba(20, 157, 221, 0.5);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-space);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: #00121c;
+  }
+
+  /* Respect reduced motion globally as a safety net. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Frosted glass panel used by cards & sections. */
+  .glass {
+    background: var(--color-panel);
+    border: 1px solid var(--color-panel-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Section title accent bar. */
+  .title-bar::after {
+    content: '';
+    display: block;
+    width: 64px;
+    height: 3px;
+    margin-top: 0.75rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-bright));
+  }
+
+  .text-gradient {
+    background: linear-gradient(120deg, var(--color-accent-bright), var(--color-accent-purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* Scroll-reveal initial state (GSAP toggles .is-visible). */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

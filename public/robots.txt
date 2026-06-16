@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jukaco.github.io/angular-portfolio/sitemap-index.xml

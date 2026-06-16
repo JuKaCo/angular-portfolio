@@ -1,0 +1,70 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import Section from './Section.astro';
+import { profileImage } from '../../data/images';
+import { socials } from '../../data/site';
+import type { LocaleData } from '../../data/types';
+
+interface Props {
+  data: LocaleData;
+}
+const { data } = Astro.props;
+const { about, ui } = data;
+---
+
+<Section id="about" title={ui.sections.about}>
+  <div class="grid items-start gap-10 md:grid-cols-[300px_1fr]">
+    <div class="reveal">
+      <div class="glass overflow-hidden rounded-2xl p-2 shadow-[--shadow-glow]">
+        <Image
+          src={profileImage}
+          alt={`Portrait of ${about.occupation}`}
+          width={560}
+          height={560}
+          class="aspect-square w-full rounded-xl object-cover"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="mt-5 flex justify-center gap-3">
+        {
+          socials.map((s) => (
+            <a
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={s.label}
+              aria-label={s.label}
+              class="grid h-10 w-10 place-items-center rounded-full border border-[--color-panel-border] text-[--color-ink-soft] transition-all hover:-translate-y-0.5 hover:border-[--color-accent] hover:text-[--color-accent-bright]"
+            >
+              <Icon name={s.icon} class="h-5 w-5" />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="text-2xl font-semibold text-gradient">{about.occupation}</h3>
+      <p class="mt-4 leading-relaxed text-[--color-ink-soft]">{about.bio}</p>
+
+      <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+        {
+          about.facts.map((f) => (
+            <li class="flex items-center gap-2 text-sm">
+              <Icon name={f.icon} class="h-4 w-4 shrink-0 text-[--color-accent-bright]" />
+              <span>{f.label}</span>
+            </li>
+          ))
+        }
+        <li class="flex items-center gap-2 text-sm sm:col-span-2">
+          <Icon name="lucide:mail" class="h-4 w-4 shrink-0 text-[--color-accent-bright]" />
+          <a href={`mailto:${about.email}`} class="hover:text-[--color-accent-bright]">{about.email}</a>
+        </li>
+      </ul>
+
+      <p class="mt-6 leading-relaxed text-[--color-ink-soft]">{about.bio2}</p>
+    </div>
+  </div>
+</Section>

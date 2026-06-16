@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Home from './Home.astro';
+import About from './About.astro';
+import Skills from './Skills.astro';
+import CV from './CV.astro';
+import Projects from './Projects.astro';
+import Testimonials from './Testimonials.astro';
+import Contact from './Contact.astro';
+import ScrollFX from './ScrollFX.astro';
+import { getData, type Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const data = getData(locale);
+---
+
+<BaseLayout locale={locale}>
+  <Home data={data} />
+  <About data={data} />
+  <Skills data={data} />
+  <CV data={data} />
+  <Projects data={data} />
+  <Testimonials data={data} />
+  <Contact data={data} />
+  <ScrollFX />
+</BaseLayout>

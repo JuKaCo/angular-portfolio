@@ -1,55 +1,39 @@
 {
-  "name": "my-portfolio",
-  "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "deploy": "ng build --configuration production --base-href https://jukaco.github.io/angular-portfolio/ && npx gh-pages -d dist/my-portfolio"
+  "name": "angular-portfolio",
+  "version": "2.0.0",
+  "description": "Portfolio of Juan Carlos Condori Caviña — Full Stack Developer & E-commerce Specialist. Rebuilt with Astro + React + Tailwind.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
   },
-  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
   "dependencies": {
-    "@angular/animations": "^16.2.0",
-    "@angular/common": "^16.2.0",
-    "@angular/compiler": "^16.2.0",
-    "@angular/core": "^16.2.0",
-    "@angular/forms": "^16.2.0",
-    "@angular/platform-browser": "^16.2.0",
-    "@angular/platform-browser-dynamic": "^16.2.0",
-    "@angular/router": "^16.2.0",
-    "@fortawesome/angular-fontawesome": "^0.13.0",
-    "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
-    "@ngx-translate/core": "^15.0.0",
-    "@ngx-translate/http-loader": "^8.0.0",
-    "@types/three": "^0.155.1",
-    "animate.css": "^4.1.1",
-    "aos": "^2.3.4",
-    "bootstrap": "^5.3.1",
-    "font-awesome": "^4.7.0",
-    "gh-pages": "^6.3.0",
-    "rxjs": "~7.8.0",
-    "three": "^0.155.0",
-    "tslib": "^2.3.0",
-    "typed.js": "^2.0.16",
-    "zone.js": "~0.13.0"
+    "@astrojs/react": "^4.2.1",
+    "@astrojs/sitemap": "^3.2.1",
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.17.10",
+    "@tailwindcss/vite": "^4.0.6",
+    "astro": "^5.3.0",
+    "astro-icon": "^1.1.5",
+    "gsap": "^3.12.7",
+    "motion": "^12.4.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^4.0.6",
+    "three": "^0.160.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^16.2.0",
-    "@angular/cli": "^16.2.0",
-    "@angular/compiler-cli": "^16.2.0",
-    "@types/aos": "^3.0.4",
-    "@types/jasmine": "~4.3.0",
-    "jasmine-core": "~4.6.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.1.3"
-  },
-  "overrides": {
-    "node-forge": ">=1.3.2",
-    "tar": ">=7.4.3"
+    "@iconify-json/lucide": "^1.2.26",
+    "@iconify-json/simple-icons": "^1.2.24",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@types/three": "^0.160.0",
+    "typescript": "^5.7.3"
   }
 }
