@@ -2,8 +2,8 @@ import type { About } from '../types';
 
 export const about: About = {
   occupation: 'Desarrollador Full Stack y especialista en comercio electrónico',
-  bio: 'Me he convertido en trabajador independiente desde que comenzó la pandemia. Me he especializado en la implementación de tiendas en línea usando ADOBE COMMERCE, para que las grandes empresas puedan seguir vendiendo sus productos. He diversificado mis habilidades en tecnologías frontend y backend. A su vez, también he ganado habilidad en la administración de servidores Linux y bases de datos, e integración de sistemas ERP, CRM y demás a través de APIs REST y buses de datos.',
-  bio2: 'Busco una empresa innovadora y centrada en el usuario para satisfacer mejor las necesidades del cliente, desde su idea hasta la entrega final de su proyecto, o participar en la mejora de un proyecto existente.',
+  bio: 'Desarrollador Full Stack con más de 10 años de experiencia, especializado en desarrollo web, soluciones de comercio electrónico y aplicaciones modernas. Construyo arquitecturas escalables orientadas a servicios con Angular, .NET y microservicios, y actualmente trabajo con React, Flutter, Azure y pipelines de CI/CD con Jenkins, potenciado por herramientas asistidas por IA. También integro sistemas ERP, CRM y de negocio a través de APIs REST y buses de mensajería.',
+  bio2: 'Me motiva unirme a equipos innovadores y centrados en el usuario donde pueda convertir visiones de producto en realidad, ya sea dando vida a nuevos proyectos o evolucionando plataformas existentes para responder a necesidades cambiantes del negocio.',
   facts: [
     { icon: 'lucide:map-pin', label: 'El Alto, La Paz, Bolivia' },
     { icon: 'lucide:briefcase', label: 'Trabajador independiente' },

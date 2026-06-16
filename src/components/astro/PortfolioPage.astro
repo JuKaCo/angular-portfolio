@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Home from './Home.astro';
+import Stats from './Stats.astro';
 import About from './About.astro';
 import Skills from './Skills.astro';
 import CV from './CV.astro';
@@ -19,6 +20,7 @@ const data = getData(locale);
 
 <BaseLayout locale={locale}>
   <Home data={data} />
+  <Stats data={data} />
   <About data={data} />
   <Skills data={data} />
   <CV data={data} />

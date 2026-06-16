@@ -26,6 +26,5 @@ export const education: EducationItem[] = [
 ];
 
 export const languages: LanguageSkill[] = [
-  { name: 'Spanish', level: 'Native' },
-  { name: 'English', level: 'Advanced' },
+  { name: 'English', level: 'B2 Upper Intermediate' },
 ];

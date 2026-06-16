@@ -11,6 +11,24 @@ export const projects: Project[] = [
     liveLabel: 'Visitar tienda',
   },
   {
+    title: 'QuickyTools',
+    image: 'quickytools',
+    tech: 'Astro, TypeScript, Tailwind CSS',
+    description:
+      'Una colección de herramientas online gratuitas y rápidas —calculadoras, generadores y convertidores— sin necesidad de registro. Construida como sitio estático con Astro, TypeScript y Tailwind CSS para tiempos de carga instantáneos y excelente SEO.',
+    liveUrl: 'https://quickytools.app',
+    liveLabel: 'Abrir app',
+  },
+  // {
+  //   title: 'CafeResto',
+  //   image: 'cafe-resto',
+  //   tech: 'Astro, TypeScript, Tailwind CSS',
+  //   description:
+  //     'Sistema de punto de venta (POS) en el navegador para cafeterías y restaurantes. Construido con Astro, TypeScript y Tailwind CSS.',
+  //   liveUrl: 'TODO',
+  //   liveLabel: 'Abrir app',
+  // },
+  {
     title: 'Portafolio profesional',
     image: 'portfolio',
     tech: 'Astro, React, Tailwind CSS, Three.js, i18n',

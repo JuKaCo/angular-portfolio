@@ -2,13 +2,38 @@ import type { Job } from '../types';
 
 export const experience: Job[] = [
   {
+    title: 'Full Stack Developer (.NET, Angular, React, Flutter)',
+    company: 'ContactUs',
+    location: 'Ohio, US (Remote)',
+    period: '2024 – Present',
+    bullets: [
+      'Built and shipped 20+ .NET microservices and 3 frontend applications',
+      'Developed cross-platform mobile features with Flutter',
+      'Accelerated delivery with AI-assisted development (Windsurf, Claude Code)',
+      'Ran Jenkins CI/CD pipelines across 5 environments on Azure',
+      'Designed RESTful APIs and scalable, service-oriented architecture',
+    ],
+  },
+  {
+    title: 'Full Stack Consultant (Slim PHP, Angular, PostgreSQL, Kafka)',
+    company: 'Vicepresidencia del Estado Plurinacional de Bolivia',
+    location: 'La Paz, BO',
+    period: '2024 · 5 months',
+    bullets: [
+      'Extended the TOKAPU state system with a new sales and inventory module',
+      'Developed the backend with Slim PHP and PostgreSQL',
+      'Built the Angular frontend using PrimeNG',
+      'Integrated event streaming with Apache Kafka',
+    ],
+  },
+  {
     title: 'Full Stack Developer (.NET, Microservices, Angular, React)',
     company: 'MotionCX',
     location: 'Ohio, US (Remote)',
-    period: '2022 · 2 years',
+    period: '2022 – 2024',
     bullets: [
       'Developed and implemented new microservice endpoints using .NET',
-      'Enhanced web client functionality using the Angular framework',
+      'Built and enhanced enterprise CRM web clients using Angular',
       'Implemented new features in a desktop application using React',
       'Managed code versioning and multi-environment deployments through Continuous Delivery (CD)',
       'Led feature documentation and tracking using JIRA and GitHub',

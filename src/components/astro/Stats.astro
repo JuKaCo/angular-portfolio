@@ -1,0 +1,15 @@
+---
+import Stats from '../react/Stats.tsx';
+import type { LocaleData } from '../../data/types';
+
+interface Props {
+  data: LocaleData;
+}
+const { data } = Astro.props;
+---
+
+<section class="relative z-10 -mt-10 pb-4">
+  <div class="reveal mx-auto max-w-5xl px-5">
+    <Stats client:visible items={data.stats} />
+  </div>
+</section>

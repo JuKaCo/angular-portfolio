@@ -58,8 +58,8 @@ export interface LanguageSkill {
 
 export interface Project {
   title: string;
-  /** key into the images map resolved at build time */
-  image: 'hicombo' | 'portfolio';
+  /** key into the projectImages map (src/data/images.ts), resolved at build time */
+  image: string;
   tech: string;
   description: string;
   liveUrl?: string;
@@ -112,9 +112,16 @@ export interface UI {
   };
 }
 
+export interface Stat {
+  value: number;
+  suffix: string;
+  label: string;
+}
+
 export interface LocaleData {
   hero: Hero;
   about: About;
+  stats: Stat[];
   skills: SkillCategory[];
   experience: Job[];
   education: EducationItem[];

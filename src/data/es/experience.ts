@@ -2,13 +2,38 @@ import type { Job } from '../types';
 
 export const experience: Job[] = [
   {
+    title: 'Desarrollador Full Stack (.NET, Angular, React, Flutter)',
+    company: 'ContactUs',
+    location: 'Ohio, EE.UU. (Remoto)',
+    period: '2024 – Presente',
+    bullets: [
+      'Desarrollo y despliegue de más de 20 microservicios .NET y 3 aplicaciones frontend',
+      'Desarrollo de funcionalidades móviles multiplataforma con Flutter',
+      'Aceleración de entregas con desarrollo asistido por IA (Windsurf, Claude Code)',
+      'Pipelines de CI/CD con Jenkins en 5 entornos sobre Azure',
+      'Diseño de APIs REST y arquitectura escalable orientada a servicios',
+    ],
+  },
+  {
+    title: 'Consultor Full Stack (Slim PHP, Angular, PostgreSQL, Kafka)',
+    company: 'Vicepresidencia del Estado Plurinacional de Bolivia',
+    location: 'La Paz, BO',
+    period: '2024 · 5 meses',
+    bullets: [
+      'Ampliación del sistema estatal TOKAPU con un nuevo módulo de ventas e inventario',
+      'Desarrollo del backend con Slim PHP y PostgreSQL',
+      'Construcción del frontend en Angular usando PrimeNG',
+      'Integración de event streaming con Apache Kafka',
+    ],
+  },
+  {
     title: 'Desarrollador Full Stack (.NET, Microservicios, Angular, React)',
     company: 'MotionCX',
     location: 'Ohio, EE.UU. (Remoto)',
-    period: '2022 · 2 años',
+    period: '2022 – 2024',
     bullets: [
       'Desarrollo y adición de nuevos endpoints en microservicios usando .NET',
-      'Desarrollo de nuevas funcionalidades en el cliente web usando Angular',
+      'Desarrollo y mejora de clientes web de CRM empresarial usando Angular',
       'Desarrollo de nuevas funcionalidades en el cliente de escritorio usando React',
       'Versionamiento de código y manejo de diferentes entornos a través de Entrega Continua (CD)',
       'Documentación y gestión de nuevas funcionalidades usando JIRA y GitHub',
