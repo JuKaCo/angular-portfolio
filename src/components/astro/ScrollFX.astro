@@ -37,12 +37,35 @@
         ease: 'none',
         scrollTrigger: {
           trigger: el,
-          start: 'top bottom',
+          start: el.dataset.parallaxStart || 'top bottom',
           end: 'bottom top',
           scrub: true,
         },
       });
     });
+
+    // 3D tilt on project cards (fine pointers only).
+    if (window.matchMedia('(pointer: fine)').matches) {
+      document.querySelectorAll<HTMLElement>('#portfolio article').forEach((card) => {
+        const rx = gsap.quickTo(card, 'rotationX', { duration: 0.4, ease: 'power2.out' });
+        const ry = gsap.quickTo(card, 'rotationY', { duration: 0.4, ease: 'power2.out' });
+        card.addEventListener('pointerenter', () => {
+          // Hand the transform over to GSAP: the .reveal/hover CSS transitions
+          // would otherwise smooth (and fight) every tilt update.
+          card.style.transitionProperty = 'opacity, box-shadow';
+          gsap.set(card, { transformPerspective: 900 });
+        });
+        card.addEventListener('pointermove', (e) => {
+          const r = card.getBoundingClientRect();
+          rx(((e.clientY - r.top) / r.height - 0.5) * -7);
+          ry(((e.clientX - r.left) / r.width - 0.5) * 7);
+        });
+        card.addEventListener('pointerleave', () => {
+          rx(0);
+          ry(0);
+        });
+      });
+    }
   }
 
   document.addEventListener('astro:page-load', initScrollFX);

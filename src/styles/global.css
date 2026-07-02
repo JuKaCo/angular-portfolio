@@ -72,6 +72,15 @@
     -webkit-backdrop-filter: blur(12px);
   }
 
+  /* Scrolled nav: darker than .glass so bright content passing underneath
+     (accent buttons, images) doesn't compete with the nav links. */
+  .nav-scrolled {
+    background: rgba(5, 6, 13, 0.78);
+    border-bottom: 1px solid var(--color-panel-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
   /* Section title accent bar. */
   .title-bar::after {
     content: '';

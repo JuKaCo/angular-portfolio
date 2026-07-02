@@ -111,6 +111,8 @@ function Scene({ animate }: { animate: boolean }) {
   const group = useRef<THREE.Group>(null);
   const nebulaMat = useRef<THREE.ShaderMaterial>(null);
   const mouse = useRef({ x: 0, y: 0 });
+  const scroll = useRef(0);
+  const pitch = useRef(0);
   const { camera } = useThree();
 
   useEffect(() => {
@@ -119,18 +121,35 @@ function Scene({ animate }: { animate: boolean }) {
       mouse.current.x = e.clientX - window.innerWidth / 2;
       mouse.current.y = e.clientY - window.innerHeight / 2;
     };
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      scroll.current = max > 0 ? window.scrollY / max : 0;
+    };
+    onScroll();
     window.addEventListener('mousemove', onMove);
-    return () => window.removeEventListener('mousemove', onMove);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('scroll', onScroll);
+    };
   }, [animate]);
 
   useFrame((_, delta) => {
     if (!animate) return;
     const t = performance.now();
+    // Scroll travel: fly deeper into the starfield as the page scrolls,
+    // pulling the camera from z=100 toward the nebula core.
+    const targetZ = 100 - scroll.current * 55;
     camera.position.x += (mouse.current.x * 0.05 - camera.position.x) * 0.01;
     camera.position.y += (-mouse.current.y * 0.05 - camera.position.y) * 0.01;
+    camera.position.z += (targetZ - camera.position.z) * 0.04;
     camera.lookAt(0, 0, 0);
     if (nebulaMat.current) nebulaMat.current.uniforms.time.value = t;
-    if (group.current) group.current.rotation.y += delta * 0.018;
+    if (group.current) {
+      pitch.current += (scroll.current * 0.3 - pitch.current) * 0.04;
+      group.current.rotation.y += delta * 0.018;
+      group.current.rotation.x = pitch.current;
+    }
   });
 
   return (
