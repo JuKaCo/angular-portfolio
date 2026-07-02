@@ -33,8 +33,8 @@ export default function SkillBar({ name, percentage, level }: Props) {
   return (
     <div ref={ref} className="mb-4">
       <div className="mb-1.5 flex items-center justify-between text-sm">
-        <span className="text-[--color-ink]">{name}</span>
-        <span className="tabular-nums text-[--color-ink-soft]">{display}%</span>
+        <span className="text-(--color-ink)">{name}</span>
+        <span className="tabular-nums text-(--color-ink-soft)">{display}%</span>
       </div>
       <div className="h-2 overflow-hidden rounded-full bg-white/8">
         <motion.div

@@ -7,7 +7,6 @@ export const skills: SkillCategory[] = [
     skills: [
       { name: 'Angular & TypeScript', percentage: 90, level: 'excellent' },
       { name: 'React', percentage: 85, level: 'very-good' },
-      { name: 'Flutter (Dart)', percentage: 70, level: 'good' },
       { name: 'PrimeNG, Bootstrap, Tailwind', percentage: 85, level: 'very-good' },
       { name: 'JavaScript, HTML5, CSS3', percentage: 90, level: 'excellent' },
     ],
@@ -32,6 +31,7 @@ export const skills: SkillCategory[] = [
       { name: 'Adobe Commerce (Magento 2)', percentage: 90, level: 'excellent' },
       { name: 'Scrum & Agile', percentage: 80, level: 'very-good' },
       { name: 'AI-assisted dev (Claude Code, Windsurf)', percentage: 85, level: 'very-good' },
+      { name: 'Automated testing (E2E, unit, load)', percentage: 80, level: 'very-good' },
     ],
   },
 ];

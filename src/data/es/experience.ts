@@ -2,14 +2,15 @@ import type { Job } from '../types';
 
 export const experience: Job[] = [
   {
-    title: 'Desarrollador Full Stack (.NET, Angular, React, Flutter)',
+    title: 'Desarrollador Full Stack (.NET, Angular, React)',
     company: 'ContactUs',
     location: 'Ohio, EE.UU. (Remoto)',
     period: '2024 – Presente',
     bullets: [
-      'Desarrollo y despliegue de más de 20 microservicios .NET y 3 aplicaciones frontend',
-      'Desarrollo de funcionalidades móviles multiplataforma con Flutter',
-      'Aceleración de entregas con desarrollo asistido por IA (Windsurf, Claude Code)',
+      'Desarrollo y despliegue de más de 20 microservicios .NET y 3 aplicaciones frontend (Angular, React)',
+      'Aplicación multiplataforma para iOS, Android, Windows y PWA con React — un solo código base compartido',
+      'Implementación de pruebas automatizadas: tests E2E, unitarios, de cobertura y de carga',
+      'Desarrollo asistido por IA con Windsurf y Claude Code para resolver problemas, entregar funcionalidades y documentar proyectos mucho más rápido',
       'Pipelines de CI/CD con Jenkins en 5 entornos sobre Azure',
       'Diseño de APIs REST y arquitectura escalable orientada a servicios',
     ],

@@ -29,6 +29,16 @@ export const projects: Project[] = [
     liveLabel: 'Open demo',
   },
   {
+    title: 'Capibara Pet for VS Code',
+    image: 'capibara-pet',
+    tech: 'TypeScript, VS Code API, Webview, CSS Sprites',
+    description:
+      'A VS Code extension that adds an animated capybara pet to your editor — it walks around, runs while you type, gets scared by errors, takes coffee breaks, and falls asleep when you go idle. Flicker-free sprite-sheet animations, zero runtime dependencies, published on the Visual Studio Marketplace.',
+    liveUrl: 'https://marketplace.visualstudio.com/items?itemName=JuanCarlosCondori.capibara-pet',
+    liveLabel: 'Marketplace',
+    sourceUrl: 'https://github.com/JuKaCo/capibara-pet-for-VSC',
+  },
+  {
     title: 'Professional Portfolio',
     image: 'portfolio',
     tech: 'Astro, React, Tailwind CSS, Three.js, i18n',

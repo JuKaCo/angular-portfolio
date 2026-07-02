@@ -3,6 +3,7 @@ import hicombo from '../assets/images/hicombo.jpg';
 import portfolio from '../assets/images/portfolio.jpg';
 import quickytools from '../assets/images/quickytools.png';
 import cafeResto from '../assets/images/cafe-resto.png';
+import capibaraPet from '../assets/images/capibara-pet.png';
 import profile from '../assets/images/profile.jpg';
 import unknown from '../assets/images/unknown.jpg';
 import roger from '../assets/images/roger.jfif';
@@ -14,6 +15,7 @@ export const projectImages: Record<string, ImageMetadata> = {
   portfolio,
   quickytools,
   'cafe-resto': cafeResto,
+  'capibara-pet': capibaraPet,
 };
 
 export const avatarImages: Record<string, ImageMetadata> = {

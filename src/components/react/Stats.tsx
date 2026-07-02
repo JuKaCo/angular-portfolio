@@ -34,7 +34,7 @@ export default function Stats({ items }: { items: Stat[] }) {
           <p className="font-[family-name:--font-display] text-4xl font-bold text-gradient sm:text-5xl">
             <Counter value={s.value} suffix={s.suffix} />
           </p>
-          <p className="mt-2 text-sm text-[--color-ink-soft]">{s.label}</p>
+          <p className="mt-2 text-sm text-(--color-ink-soft)">{s.label}</p>
         </div>
       ))}
     </div>

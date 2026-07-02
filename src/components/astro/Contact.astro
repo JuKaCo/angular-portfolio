@@ -13,13 +13,13 @@ const { ui } = data;
 
 <Section id="contact" title={ui.sections.contact}>
   <div class="glass reveal mx-auto max-w-2xl rounded-2xl p-8 text-center sm:p-12">
-    <p class="text-lg text-[--color-ink-soft]">
+    <p class="text-lg text-(--color-ink-soft)">
       {site.jobTitle} · {site.location}
     </p>
 
     <a
       href={`mailto:${site.email}`}
-      class="mt-6 inline-flex items-center gap-2 rounded-full bg-[--color-accent] px-6 py-3 font-semibold text-[#00121c] shadow-[--shadow-glow] transition-transform hover:-translate-y-0.5 hover:bg-[--color-accent-bright]"
+      class="mt-6 inline-flex items-center gap-2 rounded-full bg-(--color-accent) px-6 py-3 font-semibold text-[#00121c] shadow-(--shadow-glow) transition-transform hover:-translate-y-0.5 hover:bg-(--color-accent-bright)"
     >
       <Icon name="lucide:mail" class="h-5 w-5" />
       {ui.buttons.getInTouch}
@@ -34,7 +34,7 @@ const { ui } = data;
             rel="noopener noreferrer"
             title={s.label}
             aria-label={s.label}
-            class="grid h-11 w-11 place-items-center rounded-full border border-[--color-panel-border] text-[--color-ink-soft] transition-all hover:-translate-y-0.5 hover:border-[--color-accent] hover:text-[--color-accent-bright]"
+            class="grid h-11 w-11 place-items-center rounded-full border border-(--color-panel-border) text-(--color-ink-soft) transition-all hover:-translate-y-0.5 hover:border-(--color-accent) hover:text-(--color-accent-bright)"
           >
             <Icon name={s.icon} class="h-5 w-5" />
           </a>

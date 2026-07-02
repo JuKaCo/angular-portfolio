@@ -17,7 +17,7 @@ const { skills, ui } = data;
       skills.map((cat) => (
         <div class="glass reveal rounded-2xl p-6">
           <h3 class="mb-5 flex items-center gap-2 text-lg font-semibold">
-            <Icon name={cat.icon} class="h-5 w-5 text-[--color-accent-bright]" />
+            <Icon name={cat.icon} class="h-5 w-5 text-(--color-accent-bright)" />
             {cat.name}
           </h3>
           {cat.skills.map((s) => (

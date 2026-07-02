@@ -22,22 +22,22 @@ const { project, image, ui } = Astro.props;
       class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
       loading="lazy"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-[--color-space] via-transparent to-transparent opacity-80"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-(--color-space) via-transparent to-transparent opacity-80"></div>
   </div>
 
   <div class="flex flex-1 flex-col p-6">
     <h3 class="text-xl font-semibold">{project.title}</h3>
-    <p class="mt-1 text-sm text-[--color-accent-bright]">{project.tech}</p>
+    <p class="mt-1 text-sm text-(--color-accent-bright)">{project.tech}</p>
 
     <details class="group/d mt-3">
-      <summary class="flex cursor-pointer list-none items-center gap-1 text-sm text-[--color-ink-soft] hover:text-[--color-ink]">
+      <summary class="flex cursor-pointer list-none items-center gap-1 text-sm text-(--color-ink-soft) hover:text-(--color-ink)">
         <Icon
           name="lucide:chevron-down"
           class="h-4 w-4 transition-transform group-open/d:rotate-180"
         />
         {ui.buttons.projectDetails}
       </summary>
-      <p class="mt-2 text-sm leading-relaxed text-[--color-ink-soft]">{project.description}</p>
+      <p class="mt-2 text-sm leading-relaxed text-(--color-ink-soft)">{project.description}</p>
     </details>
 
     <div class="mt-auto flex flex-wrap gap-2 pt-5">
@@ -47,7 +47,7 @@ const { project, image, ui } = Astro.props;
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-1.5 rounded-full bg-[--color-accent] px-4 py-1.5 text-sm font-medium text-[#00121c] transition-colors hover:bg-[--color-accent-bright]"
+            class="inline-flex items-center gap-1.5 rounded-full bg-(--color-accent) px-4 py-1.5 text-sm font-medium text-[#00121c] transition-colors hover:bg-(--color-accent-bright)"
           >
             <Icon name="lucide:external-link" class="h-4 w-4" />
             {project.liveLabel ?? ui.buttons.viewLive}
@@ -60,7 +60,7 @@ const { project, image, ui } = Astro.props;
             href={project.sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-1.5 rounded-full border border-[--color-panel-border] px-4 py-1.5 text-sm font-medium transition-colors hover:border-[--color-accent]"
+            class="inline-flex items-center gap-1.5 rounded-full border border-(--color-panel-border) px-4 py-1.5 text-sm font-medium transition-colors hover:border-(--color-accent)"
           >
             <Icon name="simple-icons:github" class="h-4 w-4" />
             {ui.buttons.source}

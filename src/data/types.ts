@@ -104,6 +104,7 @@ export interface UI {
     viewLive: string;
     viewCertificate: string;
     getInTouch: string;
+    downloadCv: string;
   };
   interests: { sport: string };
   meta: {

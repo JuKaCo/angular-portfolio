@@ -28,11 +28,12 @@ export const ui: UI = {
     viewLive: 'Ver en vivo',
     viewCertificate: 'Ver certificado',
     getInTouch: 'Contáctame',
+    downloadCv: 'Descargar CV (PDF)',
   },
   interests: { sport: 'Deporte' },
   meta: {
     title: 'Juan Carlos Condori Caviña — Portafolio de Desarrollador Full Stack',
     description:
-      'Juan Carlos Condori Caviña — Desarrollador Full Stack especializado en desarrollo web, soluciones de comercio electrónico (Adobe Commerce / Magento 2) y aplicaciones web modernas.',
+      'Juan Carlos Condori Caviña — Desarrollador Full Stack asistido por IA, especializado en desarrollo web, soluciones de comercio electrónico (Adobe Commerce / Magento 2) y aplicaciones web modernas.',
   },
 };

@@ -63,15 +63,15 @@ export default function Nav({ name, links, lang }: Props) {
             <li key={l.id}>
               <a
                 href={`#${l.id}`}
-                className={`relative rounded-full px-3 py-2 text-sm transition-colors hover:text-[--color-accent-bright] ${
-                  active === l.id ? 'text-[--color-accent-bright]' : 'text-[--color-ink-soft]'
+                className={`relative rounded-full px-3 py-2 text-sm transition-colors hover:text-(--color-accent-bright) ${
+                  active === l.id ? 'text-(--color-accent-bright)' : 'text-(--color-ink-soft)'
                 }`}
               >
                 {l.label}
                 {active === l.id && (
                   <motion.span
                     layoutId="nav-active"
-                    className="absolute inset-x-2 -bottom-0.5 h-px bg-[--color-accent-bright]"
+                    className="absolute inset-x-2 -bottom-0.5 h-px bg-(--color-accent-bright)"
                   />
                 )}
               </a>
@@ -82,14 +82,14 @@ export default function Nav({ name, links, lang }: Props) {
         <div className="flex items-center gap-2">
           <a
             href={lang.otherUrl}
-            className="rounded-full border border-[--color-panel-border] px-3 py-1.5 text-xs font-semibold text-[--color-ink] transition-colors hover:border-[--color-accent] hover:text-[--color-accent-bright]"
+            className="rounded-full border border-(--color-panel-border) px-3 py-1.5 text-xs font-semibold text-(--color-ink) transition-colors hover:border-(--color-accent) hover:text-(--color-accent-bright)"
             aria-label={`Switch language to ${lang.otherLabel}`}
           >
             {lang.otherLabel}
           </a>
           <button
             type="button"
-            className="grid h-9 w-9 place-items-center rounded-md text-[--color-ink] md:hidden"
+            className="grid h-9 w-9 place-items-center rounded-md text-(--color-ink) md:hidden"
             aria-label="Toggle menu"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
@@ -113,7 +113,7 @@ export default function Nav({ name, links, lang }: Props) {
                 <a
                   href={`#${l.id}`}
                   onClick={close}
-                  className="block border-b border-white/5 px-6 py-3 text-sm text-[--color-ink]"
+                  className="block border-b border-white/5 px-6 py-3 text-sm text-(--color-ink)"
                 >
                   {l.label}
                 </a>

@@ -2,14 +2,15 @@ import type { Job } from '../types';
 
 export const experience: Job[] = [
   {
-    title: 'Full Stack Developer (.NET, Angular, React, Flutter)',
+    title: 'Full Stack Developer (.NET, Angular, React)',
     company: 'ContactUs',
     location: 'Ohio, US (Remote)',
     period: '2024 – Present',
     bullets: [
-      'Built and shipped 20+ .NET microservices and 3 frontend applications',
-      'Developed cross-platform mobile features with Flutter',
-      'Accelerated delivery with AI-assisted development (Windsurf, Claude Code)',
+      'Built and shipped 20+ .NET microservices and 3 frontend applications (Angular, React)',
+      'Developed a cross-platform app for iOS, Android, Windows and PWA with React — one shared codebase',
+      'Implemented automated testing: E2E, unit, coverage and load tests',
+      'AI-assisted development with Windsurf and Claude Code to solve problems, ship features and document projects much faster',
       'Ran Jenkins CI/CD pipelines across 5 environments on Azure',
       'Designed RESTful APIs and scalable, service-oriented architecture',
     ],

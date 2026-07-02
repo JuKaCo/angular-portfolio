@@ -28,11 +28,12 @@ export const ui: UI = {
     viewLive: 'View Live',
     viewCertificate: 'View Certificate',
     getInTouch: 'Get in touch',
+    downloadCv: 'Download CV (PDF)',
   },
   interests: { sport: 'Sports' },
   meta: {
     title: 'Juan Carlos Condori Caviña — Full Stack Developer Portfolio',
     description:
-      'Juan Carlos Condori Caviña — Full Stack Developer specializing in web development, e-commerce solutions (Adobe Commerce / Magento 2), and modern web applications.',
+      'Juan Carlos Condori Caviña — AI-assisted Full Stack Developer specializing in web development, e-commerce solutions (Adobe Commerce / Magento 2), and modern web applications.',
   },
 };

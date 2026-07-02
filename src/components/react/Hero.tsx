@@ -67,11 +67,11 @@ export default function Hero({ name, intro, keywords }: Props) {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-        className="mt-6 text-lg text-[--color-ink-soft] sm:text-2xl"
+        className="mt-6 text-lg text-(--color-ink-soft) sm:text-2xl"
       >
         {intro}{' '}
-        <span className="font-semibold text-[--color-accent-bright]">{typed}</span>
-        <span className="ml-0.5 inline-block w-px animate-pulse text-[--color-accent-bright]">|</span>
+        <span className="font-semibold text-(--color-accent-bright)">{typed}</span>
+        <span className="ml-0.5 inline-block w-px animate-pulse text-(--color-accent-bright)">|</span>
       </motion.p>
     </div>
   );

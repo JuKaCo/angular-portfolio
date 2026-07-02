@@ -28,7 +28,7 @@ export default function TestimonialsCarousel({ items }: { items: Item[] }) {
     >
       <div className="glass relative overflow-hidden rounded-2xl p-8 text-center sm:p-10">
         <span
-          className="pointer-events-none absolute left-5 top-2 select-none font-[family-name:--font-display] text-7xl leading-none text-[--color-accent]/25"
+          className="pointer-events-none absolute left-5 top-2 select-none font-[family-name:--font-display] text-7xl leading-none text-(--color-accent)/25"
           aria-hidden="true"
         >
           &ldquo;
@@ -41,7 +41,7 @@ export default function TestimonialsCarousel({ items }: { items: Item[] }) {
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
           >
-            <blockquote className="text-balance text-lg text-[--color-ink]">
+            <blockquote className="text-balance text-lg text-(--color-ink)">
               {item.quote}
             </blockquote>
             <figcaption className="mt-6 flex items-center justify-center gap-3">
@@ -51,11 +51,11 @@ export default function TestimonialsCarousel({ items }: { items: Item[] }) {
                 width={48}
                 height={48}
                 loading="lazy"
-                className="h-12 w-12 rounded-full object-cover ring-2 ring-[--color-accent]/40"
+                className="h-12 w-12 rounded-full object-cover ring-2 ring-(--color-accent)/40"
               />
               <div className="text-left">
-                <p className="font-semibold text-[--color-ink]">{item.name}</p>
-                <p className="text-sm text-[--color-ink-soft]">{item.role}</p>
+                <p className="font-semibold text-(--color-ink)">{item.name}</p>
+                <p className="text-sm text-(--color-ink-soft)">{item.role}</p>
               </div>
             </figcaption>
           </motion.figure>
@@ -71,7 +71,7 @@ export default function TestimonialsCarousel({ items }: { items: Item[] }) {
               aria-label={`Show testimonial ${i + 1}`}
               onClick={() => setIndex(i)}
               className={`h-2 rounded-full transition-all ${
-                i === index ? 'w-6 bg-[--color-accent-bright]' : 'w-2 bg-white/25'
+                i === index ? 'w-6 bg-(--color-accent-bright)' : 'w-2 bg-white/25'
               }`}
             />
           ))}
