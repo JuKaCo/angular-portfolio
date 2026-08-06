@@ -4,7 +4,7 @@
   "description": "Portfolio of Juan Carlos Condori Caviña — Full Stack Developer & E-commerce Specialist. Rebuilt with Astro + React + Tailwind.",
   "type": "module",
   "engines": {
-    "node": ">=20"
+    "node": ">=22.12.0"
   },
   "scripts": {
     "dev": "astro dev",
@@ -19,7 +19,7 @@
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.17.10",
     "@tailwindcss/vite": "^4.0.6",
-    "astro": "^6.4.7",
+    "astro": "^7.2.0",
     "astro-icon": "^1.1.5",
     "gsap": "^3.12.7",
     "motion": "^12.4.2",
